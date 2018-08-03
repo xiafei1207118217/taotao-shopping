@@ -19,6 +19,11 @@ public class PageController {
   public String showIndex() {
   	return "index";
   }
+	/**
+	 * 展示其他页面
+	 * @param page
+	 * @return
+	 */
 	@RequestMapping("/{page}")
 	public String showPage(@PathVariable String page){
 	  return page;
