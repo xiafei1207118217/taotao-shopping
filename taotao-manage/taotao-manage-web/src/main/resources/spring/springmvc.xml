@@ -9,6 +9,7 @@
 
 	<context:component-scan base-package="com.taotao.controller" />
 	<mvc:annotation-driven />
+	<mvc:default-servlet-handler/>
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
@@ -17,4 +18,9 @@
 	<!-- 资源映射 -->
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="utf-8"></property>   
+        <property name="maxUploadSize" value="10485760000"></property>   
+   </bean>  
 </beans>
